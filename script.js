@@ -10,11 +10,14 @@ const palindromeDefinition = document.getElementById("palindrome-definition")
 
 /* FUNCTIONS */
 
-// is input empty? -> alert
-const isInputEmpty = () => {
+// submit input
+const submit = () => {
     if (!textInput.value) {
         alert('Please input a value')
+        console.log(`Text input is blank`)
     }
+    console.log(`Text input is: ${textInput.value}`)
+    textInput.value = ""
 }
 
 // remove non-alphanum chars
@@ -26,7 +29,4 @@ const isPalindrome = () => {}
 
 /* EVENT LISTENERS */
 
-// input change
-// textInput.addEventListener('change') // <- necessary?
-// input submit
-checkBtn.addEventListener('click', isInputEmpty)
+checkBtn.addEventListener('click', submit)
