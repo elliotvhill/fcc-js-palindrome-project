@@ -7,14 +7,6 @@ const palindromeDefinition = document.getElementById("palindrome-definition")
 
 
 
-/* EVENT LISTENERS */
-
-// input change
-textInput.addEventListener('change') // <- necessary?
-// input submit
-checkBtn.addEventListener('click', isInputEmpty)
-
-
 
 /* FUNCTIONS */
 
@@ -30,3 +22,11 @@ const removeInvalidChars = () => {}
 
 // check for palindrome
 const isPalindrome = () => {}
+
+
+/* EVENT LISTENERS */
+
+// input change
+// textInput.addEventListener('change') // <- necessary?
+// input submit
+checkBtn.addEventListener('click', isInputEmpty)
