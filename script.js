@@ -17,11 +17,17 @@ const submit = () => {
         console.log(`Text input is blank`)
     }
     console.log(`Text input is: ${textInput.value}`)
+    // remove non-alphanum chars
+    let str = textInput.value
+    const removeInvalidChars = (str) => {
+        const regex = /\W+/g
+        return str.replace(regex, "")
+    }
+    removeInvalidChars(textInput.value)
+    console.log(removeInvalidChars(textInput.value))
     textInput.value = ""
 }
 
-// remove non-alphanum chars
-const removeInvalidChars = () => {}
 
 // check for palindrome
 const isPalindrome = () => {}
