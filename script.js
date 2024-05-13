@@ -10,13 +10,23 @@ const palindromeDefinition = document.getElementById("palindrome-definition")
 
 /* FUNCTIONS */
 
+// check for palindrome
+const isPalindrome = (str) => {
+    let strArr = new Array(str)
+    if (strArr === strArr.reverse()) {
+        return `${str} is a palindrome`
+    } else {
+        return `${str} is not a palindrome`
+    }
+}
+
 // submit input
 const submit = () => {
     if (!textInput.value) {
         alert('Please input a value')
-        console.log(`Text input is blank`)
+        // console.log(`Text input is blank`)
     }
-    console.log(`Text input is: ${textInput.value}`)
+    // console.log(`Text input is: ${textInput.value}`)
     // remove non-alphanum chars
     let str = textInput.value
     const removeInvalidChars = (str) => {
@@ -25,12 +35,11 @@ const submit = () => {
     }
     removeInvalidChars(textInput.value)
     console.log(removeInvalidChars(textInput.value))
+    isPalindrome(str)
     textInput.value = ""
 }
 
 
-// check for palindrome
-const isPalindrome = () => {}
 
 
 /* EVENT LISTENERS */
