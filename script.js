@@ -10,32 +10,32 @@ const palindromeDefinition = document.getElementById("palindrome-definition")
 
 /* FUNCTIONS */
 
-// check for palindrome
-const isPalindrome = (str) => {
-    let strArr = new Array(str)
-    if (strArr === strArr.reverse()) {
-        return `${str} is a palindrome`
-    } else {
-        return `${str} is not a palindrome`
-    }
-}
 
 // submit input
 const submit = () => {
-    if (!textInput.value) {
-        alert('Please input a value')
-        // console.log(`Text input is blank`)
-    }
-    // console.log(`Text input is: ${textInput.value}`)
-    // remove non-alphanum chars
     let str = textInput.value
-    const removeInvalidChars = (str) => {
-        const regex = /\W+/g
-        return str.replace(regex, "")
+    if (!str) {
+        alert('Please input a value') // √
+    } else {
+        // remove non-alphanum chars √
+        const removeInvalidChars = str => {
+            const regex = /\W+/g
+            return str.replace(regex, "")
+        }
+        removeInvalidChars(str)
+        console.log(removeInvalidChars(str)) // √
+        // check for palindrome
+        let strArr = new Array(str)
+        const isPalindrome = (str) => {
+            let palindrome = [...strArr].reverse()
+            if (strArr !== palindrome) {
+                return console.log(`${strArr.join()} is not a palindrome`)
+            } else {
+                return console.log(`${strArr.join()} is a palindrome`)
+            }
+        }
+        isPalindrome(textInput.value)
     }
-    removeInvalidChars(textInput.value)
-    console.log(removeInvalidChars(textInput.value))
-    isPalindrome(str)
     textInput.value = ""
 }
 
