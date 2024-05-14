@@ -14,7 +14,7 @@ const palindromeDefinition = document.getElementById("palindrome-definition")
 // submit input
 const submit = () => {
     let str = textInput.value
-    let cleanStr;
+    let cleanStr = [];
     // check if input is empty
     if (!str) {
         alert('Please input a value') // √
@@ -28,17 +28,18 @@ const submit = () => {
         removeInvalidChars(str) // √
         console.log(removeInvalidChars(str)) // √
         // check for palindrome
-        let strArr = new Array(cleanStr)
-        let palindrome = [...strArr].reverse().join() // join √ reverse X
+        let strArr = cleanStr.split("") // √
+        console.log(strArr)
+        let palindrome = strArr.reverse("").join("") // √
         console.log(`Palindrome is: ${palindrome}`)
-        const isPalindrome = (cleanStr) => {
-            if (cleanStr !== palindrome) {
-                return console.log(`${cleanStr} is not a palindrome`)
+        const isPalindrome = (str1, str2) => {
+            if (str1 !== str2) {
+                return console.log(`${str1} is not a palindrome`)
             } else {
-                return console.log(`${cleanStr} is a palindrome`)
+                return console.log(`${str1} is a palindrome`)
             }
         }
-        isPalindrome(str)
+        isPalindrome(cleanStr, palindrome)
     }
     textInput.value = ""
 }
