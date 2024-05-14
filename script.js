@@ -14,27 +14,31 @@ const palindromeDefinition = document.getElementById("palindrome-definition")
 // submit input
 const submit = () => {
     let str = textInput.value
+    let cleanStr;
+    // check if input is empty
     if (!str) {
         alert('Please input a value') // √
     } else {
         // remove non-alphanum chars √
         const removeInvalidChars = str => {
             const regex = /\W+/g
-            return str.replace(regex, "")
+            cleanStr = str.replace(regex, "")
+            return cleanStr
         }
-        removeInvalidChars(str)
+        removeInvalidChars(str) // √
         console.log(removeInvalidChars(str)) // √
         // check for palindrome
-        let strArr = new Array(str)
-        const isPalindrome = (str) => {
-            let palindrome = [...strArr].reverse()
-            if (strArr !== palindrome) {
-                return console.log(`${strArr.join()} is not a palindrome`)
+        let strArr = new Array(cleanStr)
+        let palindrome = [...strArr].reverse().join() // join √ reverse X
+        console.log(`Palindrome is: ${palindrome}`)
+        const isPalindrome = (cleanStr) => {
+            if (cleanStr !== palindrome) {
+                return console.log(`${cleanStr} is not a palindrome`)
             } else {
-                return console.log(`${strArr.join()} is a palindrome`)
+                return console.log(`${cleanStr} is a palindrome`)
             }
         }
-        isPalindrome(textInput.value)
+        isPalindrome(str)
     }
     textInput.value = ""
 }
