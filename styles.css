@@ -1,0 +1,19 @@
+.container {
+    max-width: 60vw;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    border-radius: 8px;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+button {
+    border-radius: 8px;
+    padding: 0.5em;
+    margin: 0.5em;
+}
