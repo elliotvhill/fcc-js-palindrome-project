@@ -34,8 +34,10 @@ const submit = () => {
         console.log(`Palindrome is: ${palindrome.toLowerCase()}`)
         const isPalindrome = (str1, str2) => {
             if (str1.toLowerCase() !== str2.toLowerCase()) {
+                result.innerText = `${str} is not a palindrome`
                 return console.log(`${str} is not a palindrome`)
             } else {
+                result.innerText = `${str} is a palindrome`
                 return console.log(`${str} is a palindrome`)
             }
         }
