@@ -13,7 +13,7 @@ const palindromeDefinition = document.getElementById("palindrome-definition")
 
 // submit input
 const submit = () => {
-    let str = textInput.value
+    let str = textInput.value.toLowerCase()
     let cleanStr = [];
     // check if input is empty
     if (!str) {
